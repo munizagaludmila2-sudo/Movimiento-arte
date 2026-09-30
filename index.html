@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nuestra Cooperativa - Movimiento y Arte">
+<title>Nuestra Cooperativa | Movimiento y Arte</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap');
+
+:root{
+  --lila:#c9b4d9;
+  --lila2:#e7d8ed;
+  --rosa:#e9c8d8;
+  --rosa2:#f6e5ec;
+  --gris:#d9dde0;
+  --crema:#fffaf5;
+  --texto:#29252d;
+  --sombra:0 12px 35px rgba(74,52,76,.13);
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--texto);
+  font-family:'Baloo 2',system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, #f4e8ef 0 8%, transparent 8.5%),
+    radial-gradient(circle at 90% 25%, #eee7f3 0 7%, transparent 7.5%),
+    linear-gradient(135deg,#fffdf9,#f9f1f5 55%,#f4eef7);
+}
+a{color:inherit;text-decoration:none}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,250,247,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #eadfe7;
+  box-shadow:0 5px 20px rgba(50,40,50,.07);
+}
+.nav-inner{
+  max-width:1150px;margin:auto;padding:12px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+}
+.logo{font-weight:800;font-size:1.25rem}
+.logo span{color:#8f6da1}
+.nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  padding:8px 13px;border-radius:999px;font-weight:600;font-size:.95rem;
+}
+.nav-links a:hover{background:var(--lila2)}
+.hero{
+  min-height:82vh;display:grid;place-items:center;padding:65px 20px 45px;
+}
+.hero-box{
+  width:min(1120px,100%);
+  background:rgba(255,255,255,.72);
+  border:1px solid #eadfe7;border-radius:35px;
+  box-shadow:var(--sombra);padding:42px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;
+}
+.badge{
+  display:inline-block;background:var(--lila2);padding:8px 16px;border-radius:999px;
+  font-weight:700;letter-spacing:.5px;
+}
+h1{
+  font-size:clamp(3.1rem,8vw,6.7rem);line-height:.86;margin:20px 0 18px;
+  font-family:'Pacifico',cursive;font-weight:400;
+}
+.highlight{
+  background:linear-gradient(transparent 58%,#e5cfe9 58%);
+}
+.hero p{font-size:1.25rem;line-height:1.45;max-width:620px}
+.cta{
+  display:inline-flex;gap:8px;align-items:center;margin-top:12px;
+  background:#2d2930;color:#fff;padding:13px 20px;border-radius:999px;
+  font-weight:700;box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+.hero-img{
+  width:100%;border-radius:28px;box-shadow:var(--sombra);
+  transform:rotate(1.5deg);border:8px solid white;
+}
+section{padding:72px 20px}
+.container{max-width:1150px;margin:auto}
+.section-title{
+  text-align:center;margin:0 auto 35px;font-size:clamp(2.3rem,5vw,4rem);
+  font-family:'Pacifico',cursive;font-weight:400;
+}
+.section-title span{background:linear-gradient(transparent 58%,#e6d2ea 58%)}
+.intro{
+  max-width:850px;margin:0 auto 35px;text-align:center;
+  font-size:1.18rem;line-height:1.55;
+}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:rgba(255,255,255,.82);border:1px solid #e9dfe7;
+  border-radius:24px;padding:24px;box-shadow:var(--sombra);
+  transition:.25s transform,.25s box-shadow;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(74,52,76,.16)}
+.card h3{margin:0 0 8px;font-size:1.5rem}
+.card p{line-height:1.45;margin:0}
+.icon{
+  width:52px;height:52px;display:grid;place-items:center;border-radius:16px;
+  background:var(--rosa2);font-size:1.6rem;margin-bottom:12px;
+}
+.team{grid-template-columns:repeat(5,1fr)}
+.team .card{text-align:center;padding:20px 14px}
+.team .icon{margin:0 auto 10px}
+.team h3{font-size:1.2rem}
+.team p{font-size:.95rem}
+.split{
+  display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch;
+}
+.list-card{padding:28px}
+.list-card ul{margin:10px 0 0;padding-left:23px;line-height:1.7}
+.accent-pink{border-top:8px solid #dca8c4}
+.accent-lila{border-top:8px solid #bda5d0}
+.accent-blue{border-top:8px solid #a9c1d8}
+.accent-yellow{border-top:8px solid #dfc58b}
+.gallery{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:22px;
+}
+.gallery figure{
+  margin:0;background:#fff;padding:10px;border-radius:24px;box-shadow:var(--sombra);
+}
+.gallery img{display:block;width:100%;border-radius:17px;cursor:zoom-in}
+.gallery figcaption{padding:12px 10px 8px;text-align:center;font-weight:700}
+.quote{
+  margin:35px auto 0;max-width:850px;text-align:center;
+  background:#e9d8ef;border-radius:25px;padding:26px;
+  font-family:'Pacifico',cursive;font-size:1.65rem;
+}
+footer{
+  padding:45px 20px;text-align:center;background:#302b32;color:#fff;
+}
+footer .small{opacity:.78}
+.top{
+  position:fixed;right:18px;bottom:18px;width:48px;height:48px;
+  border-radius:50%;display:grid;place-items:center;background:#2d2930;color:#fff;
+  box-shadow:0 8px 25px rgba(0,0,0,.2);z-index:30;
+}
+.modal{
+  display:none;position:fixed;inset:0;background:rgba(25,20,28,.82);
+  z-index:100;align-items:center;justify-content:center;padding:20px;
+}
+.modal.open{display:flex}
+.modal img{max-width:95vw;max-height:90vh;border-radius:15px;box-shadow:0 20px 70px rgba(0,0,0,.4)}
+.close{position:fixed;right:20px;top:15px;color:white;font-size:2rem;cursor:pointer}
+@media(max-width:900px){
+  .hero-box,.split{grid-template-columns:1fr}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .team{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .nav-inner{align-items:flex-start;flex-direction:column}
+  .nav-links{justify-content:flex-start}
+  .hero{padding-top:35px}
+  .hero-box{padding:24px;border-radius:25px}
+  .grid,.gallery{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr}
+  section{padding:55px 15px}
+}
+</style>
+</head>
+<body id="inicio">
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#inicio">💜 <span>Movimiento y Arte</span></a>
+    <div class="nav-links">
+      <a href="#cooperativa">Cooperativa</a>
+      <a href="#objetivos">Objetivos</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#organizacion">Organización</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#registros">Registros</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-box">
+    <div>
+      <span class="badge">✨ Cooperativa de danza</span>
+      <h1>Nuestra <span class="highlight">Cooperativa</span></h1>
+      <p>
+        Un espacio donde la danza no solo es una actividad para aprender:
+        también es un lugar para divertirse, comprenderse, compartir y crecer juntos.
+      </p>
+      <a class="cta" href="#cooperativa">Conocer el proyecto ↓</a>
+    </div>
+    <img class="hero-img" src="presentacion.jpg" alt="Presentación de nuestra cooperativa">
+  </div>
+</header>
+
+<section id="cooperativa">
+  <div class="container">
+    <h2 class="section-title"><span>¿Qué hacemos?</span></h2>
+    <p class="intro">
+      Producimos y compartimos arte, organizamos actividades culturales,
+      promovemos el movimiento y la expresión y trabajamos en equipo.
+      Buscamos que la danza sea una actividad accesible e inclusiva.
+    </p>
+    <div class="grid">
+      <article class="card">
+        <div class="icon">💃</div><h3>Arte y danza</h3>
+        <p>Aprendemos, practicamos y compartimos diferentes expresiones artísticas.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🤝</div><h3>Trabajo colectivo</h3>
+        <p>Distribuimos tareas y responsabilidades para alcanzar objetivos comunes.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🌱</div><h3>Inclusión</h3>
+        <p>Queremos un espacio donde las personas puedan participar, compartir y crecer.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🎭</div><h3>Actividades culturales</h3>
+        <p>Organizamos encuentros y propuestas para difundir el arte y la cultura.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📣</div><h3>Difusión</h3>
+        <p>Comunicamos clases, horarios y actividades mediante redes sociales.</p>
+      </article>
+      <article class="card">
+        <div class="icon">💜</div><h3>Comunidad</h3>
+        <p>Buscamos beneficiar a los socios y también aportar a la comunidad.</p>
+      </article>
+    </div>
+    <div class="quote">“Bailamos juntos y crecemos juntos.”</div>
+  </div>
+</section>
+
+<section id="objetivos">
+  <div class="container">
+    <h2 class="section-title"><span>Objetivos y recursos</span></h2>
+    <div class="split">
+      <article class="card list-card accent-pink">
+        <h3>🎯 Nuestro objetivo</h3>
+        <p>Ofrecer un espacio accesible para aprender danza, fomentando también la integración y el compañerismo.</p>
+        <ul>
+          <li>Generar un espacio de trabajo colectivo.</li>
+          <li>Difundir el arte y la cultura.</li>
+          <li>Fomentar el movimiento y la inclusión.</li>
+          <li>Lograr un desarrollo sostenible.</li>
+          <li>Beneficiar a los socios y a la comunidad.</li>
+        </ul>
+      </article>
+      <article class="card list-card accent-lila">
+        <h3>🧰 Lo que necesitamos</h3>
+        <ul>
+          <li>Salón para realizar las clases.</li>
+          <li>Equipo de música.</li>
+          <li>Espejos para poder practicar.</li>
+          <li>Elementos de limpieza.</li>
+          <li>Agua para los alumnos.</li>
+          <li>Dispensers.</li>
+          <li>Celulares y computadoras para organizarnos.</li>
+          <li>Redes sociales.</li>
+          <li>Dinero para gastos iniciales.</li>
+          <li>Batería para preparar las clases y coreografías.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="equipo">
+  <div class="container">
+    <h2 class="section-title"><span>Nuestro equipo</span></h2>
+    <p class="intro">Juntas hacemos que la danza siga creciendo. Cada integrante cumple una función para que la cooperativa pueda funcionar.</p>
+    <div class="grid team">
+      <article class="card">
+        <div class="icon">💃</div><h3>Tatiana Fuentes</h3>
+        <p><b>Profesora encargada de danza</b><br>Dicta las clases y prepara las coreografías.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🏠</div><h3>Mailén Díaz</h3>
+        <p><b>Encargada del salón</b><br>Proporciona y organiza el espacio donde se realizan las clases.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📱</div><h3>Berenice Bastias</h3>
+        <p><b>Publicidad y redes sociales</b><br>Promociona clases, hace flyers y comunica horarios.</p>
+      </article>
+      <article class="card">
+        <div class="icon">💰</div><h3>Ludmila Munizaga</h3>
+        <p><b>Administración y tareas</b><br>Lleva las cuentas, cobra cuotas y registra los gastos.</p>
+      </article>
+      <article class="card">
+        <div class="icon">📋</div><h3>Elizabeth Pinto</h3>
+        <p><b>Secretaría e inscripciones</b><br>Registra alumnos, organiza horarios y lleva la documentación.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="organizacion">
+  <div class="container">
+    <h2 class="section-title"><span>Organización</span></h2>
+    <div class="gallery">
+      <figure>
+        <img src="organizacion.jpg" alt="Organización, estructura y funcionamiento de la cooperativa" loading="lazy">
+        <figcaption>Organización, estructura e idea</figcaption>
+      </figure>
+      <figure>
+        <img src="objetivos-recursos.jpg" alt="Objetivos y recursos de la cooperativa" loading="lazy">
+        <figcaption>Objetivos, recursos y aportes</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="recursos">
+  <div class="container">
+    <h2 class="section-title"><span>¿Cómo comenzamos?</span></h2>
+    <div class="grid">
+      <article class="card accent-pink">
+        <div class="icon">💵</div>
+        <h3>Aporte inicial</h3>
+        <p>Cada integrante puede realizar un aporte inicial de dinero para comenzar el proyecto.</p>
+      </article>
+      <article class="card accent-blue">
+        <div class="icon">🏢</div>
+        <h3>Gastos principales</h3>
+        <p>El dinero se utilizará para cubrir gastos de la cooperativa, como el alquiler del salón y elementos de publicidad.</p>
+      </article>
+      <article class="card accent-yellow">
+        <div class="icon">💡</div>
+        <h3>¿Y después?</h3>
+        <p>Con el dinero recaudado se podrán pagar servicios del salón, luz y otros gastos necesarios.</p>
+      </article>
+      <article class="card accent-lila">
+        <div class="icon">⚖️</div>
+        <h3>¿Qué queda?</h3>
+        <p>Lo que quede se repartirá en partes iguales para cada integrante.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="registros">
+  <div class="container">
+    <h2 class="section-title"><span>Libros y registros</span></h2>
+    <p class="intro">Estos registros permiten mantener la organización, el control y el compromiso dentro de la cooperativa.</p>
+    <div class="gallery">
+      <figure>
+        <img src="libros.jpg" alt="Libros y requisitos de la cooperativa" loading="lazy">
+        <figcaption>Libros y requisitos</figcaption>
+      </figure>
+      <figure>
+        <img src="equipo.jpg" alt="Nuestro equipo" loading="lazy">
+        <figcaption>Nuestro equipo</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-size:1.5rem;font-weight:800">💜 Movimiento y Arte</div>
+  <div class="small">La danza también se construye en equipo.</div>
+</footer>
+
+<a class="top" href="#inicio" aria-label="Volver arriba">↑</a>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <button class="close" onclick="closeModal()" aria-label="Cerrar">×</button>
+  <img id="modalImg" src="" alt="">
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+
+document.querySelectorAll('.gallery img, .hero-img').forEach(img => {
+  img.addEventListener('click', () => {
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+  });
+});
+
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  modalImg.src = '';
+}
+modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
